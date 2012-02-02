@@ -120,7 +120,7 @@ class NestedObjects(Collector):
     def collect(self, objs, source_attr=None, **kwargs):
         for obj in objs:
             if source_attr:
-                self.add_edge(getattr(obj, source_attr), obj)
+                self.add_edge(getattr(obj, source_attr, None), obj)
             else:
                 self.add_edge(None, obj)
         try:
